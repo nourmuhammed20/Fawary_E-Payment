@@ -27,6 +27,19 @@ In addition to the above functionality, the project also includes a RESTful API 
 # Running the Project
 To run the project, you will need to have Eclipse IDE for Java EE and the Tomcat plugin installed. You can then import the project into Eclipse and run it on the Tomcat server. The API can be tested using Postman or a similar tool.
 
+# Running API in Postman :
+<ol>
+<li>Login as admin</li>
+<li>apply Cash on specefic Service provider</li>
+<li>apply Discount on Specefic Service</li>
+<li>Sign out from admin account</li>
+<li>Register as user with saved Data</li>
+<li>Login as user</li>
+<li>Use Payment Method and test cash , Discount</li>
+</ol>
+
+#### Warning : You have to sign out to change from User/admin mode to avoid mistakes 
+
 # Dependencies
 The project depends on the following libraries:
 <ul>
