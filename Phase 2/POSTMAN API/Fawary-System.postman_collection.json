@@ -1,0 +1,582 @@
+{
+	"info": {
+		"_postman_id": "14933fcb-5cb8-4bc6-a9a0-791c83b318e2",
+		"name": "Fawary-System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24890605"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "Search",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "reqservice",
+											"value": "land",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{user}}/search/",
+									"host": [
+										"{{user}}"
+									],
+									"path": [
+										"search",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Refund Notification",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{user}}/refunds/notifications",
+									"host": [
+										"{{user}}"
+									],
+									"path": [
+										"refunds",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "Payment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "serviceName",
+											"value": "internet",
+											"description": "you have to apply specific discount on servicename first",
+											"type": "text"
+										},
+										{
+											"key": "serviceMoney",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "method",
+											"value": "credit",
+											"type": "text"
+										},
+										{
+											"key": "serviceProvider",
+											"value": "we",
+											"description": "you have to apply Cash Acceptance First from Admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{user}}/pay/",
+									"host": [
+										"{{user}}"
+									],
+									"path": [
+										"pay",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "nm",
+											"type": "text"
+										},
+										{
+											"key": "Password",
+											"value": "nm",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{auth}}/user/login",
+									"host": [
+										"{{auth}}"
+									],
+									"path": [
+										"user",
+										"login"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "n",
+											"disabled": true
+										},
+										{
+											"key": "Password",
+											"value": "n",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "nm",
+											"description": "you have to sign out to switch from admin to user",
+											"type": "text"
+										},
+										{
+											"key": "Password",
+											"value": "nm",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "nour@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "wallet",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "credit",
+											"value": "1000.0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{auth}}/user/register",
+									"host": [
+										"{{auth}}"
+									],
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "User SignOut",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{auth}}/user/signout",
+									"host": [
+										"{{auth}}"
+									],
+									"path": [
+										"user",
+										"signout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add Wallet money",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "walletValue",
+											"value": "1100",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{user}}/wallet/add",
+									"host": [
+										"{{user}}"
+									],
+									"path": [
+										"wallet",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request Refund",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{user}}/refunds/add?id=4017",
+									"host": [
+										"{{user}}"
+									],
+									"path": [
+										"refunds",
+										"add"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4017"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "Get Wallet Transaction",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "basic YWRtaW46YWRtaW4=",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{admin}}/wallet/alltrans",
+									"host": [
+										"{{admin}}"
+									],
+									"path": [
+										"wallet",
+										"alltrans"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Transactions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin}}/transactions/",
+									"host": [
+										"{{admin}}"
+									],
+									"path": [
+										"transactions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Refunds",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin}}/refunds/",
+									"host": [
+										"{{admin}}"
+									],
+									"path": [
+										"refunds",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "Admin Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "admin1",
+											"type": "text"
+										},
+										{
+											"key": "Password",
+											"value": "admin1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{auth}}/admin/login",
+									"host": [
+										"{{auth}}"
+									],
+									"path": [
+										"admin",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cash Applier",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "cashService",
+											"value": "we",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{admin}}/services/cash/apply",
+									"host": [
+										"{{admin}}"
+									],
+									"path": [
+										"services",
+										"cash",
+										"apply"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "Admin SignOut",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{auth}}/admin/signout",
+									"host": [
+										"{{auth}}"
+									],
+									"path": [
+										"admin",
+										"signout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reject Refund",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{admin}}/refunds/reject?id=2630",
+									"host": [
+										"{{admin}}"
+									],
+									"path": [
+										"refunds",
+										"reject"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2630"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Accept Refund",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{admin}}/refunds/accept?id=4017",
+									"host": [
+										"{{admin}}"
+									],
+									"path": [
+										"refunds",
+										"accept"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4017"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Apply Discount",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "ServiceName",
+											"value": "internet",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{admin}}/apply/discount",
+									"host": [
+										"{{admin}}"
+									],
+									"path": [
+										"apply",
+										"discount"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "admin",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
